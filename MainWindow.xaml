@@ -1,0 +1,88 @@
+﻿<Window x:Class="DemoCrudMVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoCrudMVVM"
+        xmlns:vm="clr-namespace:DemoCrudMVVM.ViewModel"
+        mc:Ignorable="d"
+        Title="DemoCrud" Height="570" Width="831.5" Style="{StaticResource LayoutGridStyle}" FontWeight="Bold">
+    <Window.Resources>
+        <vm:FormViewModel x:Key="FormViewModel"/>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" >
+        <Grid Width="775.608" Height="517.547" DataContext="{Binding Source={StaticResource FormViewModel}}" >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="Form">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Label Style="{StaticResource label}" Content="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,10,0,0" Height="26" Width="44"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text="{Binding FormModel.Name,Mode=TwoWay}" Margin="20,12,0,0" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Label Style="{StaticResource label}" Content="Address:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,40,0,0" Height="26" Width="55"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text="{Binding FormModel.Address,Mode=TwoWay}" Margin="10,40,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Label Style="{StaticResource label}" Content="Phone:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,40,0,0" Height="26" Width="46"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text="{Binding FormModel.Phone,Mode=TwoWay}" Margin="20,40,0,0"/>
+                    <Label Style="{StaticResource label}" Content="i.e:+91 8921991283" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,40,0,0" Height="26" Width="146" RenderTransformOrigin="5.219,1.297"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="283">
+                    <Button x:Name="btnsubmit" Style="{StaticResource submitbtn}" 
+                            Content="{Binding FormModel.SubmitType,Mode=TwoWay}" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" 
+                            Command="{Binding SubmitCommand}" Margin="105,16,0,0" Height="22" 
+                            IsDefault="True"/>
+                    <Button Content="Cancel" HorizontalAlignment="Left" Command="{Binding CancelCommand}" VerticalAlignment="Top" Width="75" 
+                            Margin="10,16,0,10" Height="22" />
+                </StackPanel>
+
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Viewbox Margin="40 0 0 0" 
+                    Height="173.196" Width="725.593" Stretch="Fill">
+                    <DataGrid SelectionMode="Single" ItemsSource="{Binding AllUsers,UpdateSourceTrigger=Default}" CanUserAddRows="False" 
+                        AutoGenerateColumns="False" 
+                        BorderThickness="20" 
+                        Height="173" Width="725" 
+                        SelectedItem="{Binding Path=Id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}" Header="ID" x:Name="id" 
+                                                IsReadOnly="True" Width="Auto"/>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="Auto"/>
+                            <DataGridTextColumn Binding="{Binding Address}" Header="Address" Width="Auto"/>
+                            <DataGridTextColumn Binding="{Binding Phone}" Header="Phone" Width="Auto"/>
+
+                            <DataGridTemplateColumn Header="Edit">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Edit"
+                                                Command="{Binding Path=DataContext.EditCommand, RelativeSource= {RelativeSource FindAncestor,
+                                                AncestorType={x:Type DataGrid}}}"  CommandParameter="{Binding}" BorderThickness="2" Width="50"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn Header="Delete">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Delete"  Command="{Binding Path=DataContext.DeleteCommand, RelativeSource= {RelativeSource FindAncestor,
+                                                AncestorType={x:Type DataGrid}}}" CommandParameter="{Binding}" BorderThickness="2" Width="50"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Viewbox>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</Window>

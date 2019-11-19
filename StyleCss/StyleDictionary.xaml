@@ -1,0 +1,42 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:local="clr-namespace:DemoCrudMVVM">
+    <Style x:Key="LayoutGridStyle" TargetType="local:MainWindow">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="D:\Projects\DemoCrud\assets\images\back.jpg"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="label" TargetType="{x:Type Label}">
+        <Setter Property="FontFamily" Value="Verdana"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="btnStyle">
+        <Setter Property="Button.FontFamily" Value="Times New Roman"/>
+        <Setter Property="Button.FontSize" Value="16"/>
+        <Setter Property="Button.Background" Value="blue"/>
+        <Setter Property="TextBlock.FontFamily" Value="Arial"/>
+        <!--<Setter Property="TextBlock.FontSize" Value="12"/>-->
+    </Style>
+
+    <Style x:Key="submitbtn" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="LawnGreen"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

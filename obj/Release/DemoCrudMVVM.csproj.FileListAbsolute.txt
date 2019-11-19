@@ -1,0 +1,16 @@
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\obj\Release\MainWindow.g.cs
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\obj\Release\App.g.cs
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\obj\Release\DemoCrudMVVM_MarkupCompile.cache
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\obj\Release\DemoCrudMVVM_MarkupCompile.lref
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\bin\Release\DemoCrudMVVM.exe.config
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\bin\Release\DemoCrudMVVM.exe
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\bin\Release\DemoCrudMVVM.pdb
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\obj\Release\App.baml
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\obj\Release\MainWindow.baml
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\obj\Release\StyleCss\StyleDictionary.baml
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\obj\Release\DemoCrudMVVM.g.resources
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\obj\Release\DemoCrudMVVM.Properties.Resources.resources
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\obj\Release\DemoCrudMVVM.csproj.GenerateResource.cache
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\obj\Release\DemoCrudMVVM.exe
+C:\Users\jo.yadav\source\repos\DemoCrudMVVM\obj\Release\DemoCrudMVVM.pdb
